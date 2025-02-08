@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!-- Ajoute la bibliothèque FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/panier.css">
+</head>
+<body>
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container "style="flex-flow: column;">
+            <a class="navbar-brand" href="index.html">
+          <span>
+            Kids Market
+          </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product">
+                            Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order">
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listProduct">
+                            Manage Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formProduct">
+                            add Products
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="user_option">
+
+                    <a href="#" id="login-link" onclick="redirectToLogin()">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span style="
+                        background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">Login</span>
+                    </a>
+
+                    <script>
+                        function redirectToLogin() {
+                            console.log("Redirection en cours...");
+                            window.location.href = "http://localhost:8080/login"; // Redirection vers le contrôleur Spring Boot
+                        }
+
+                    </script>
+
+                    <a href="/panier">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<section class="h-100 h-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-lg-8">
+                                <div class="p-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-5">
+                                        <h1 class="fw-bold mb-0" style="background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent; ">Panier</h1>
+
+                                    </div>
+                                    <hr class="my-4">
+
+                                    <div id="product-list"></div>
+
+                                    <hr class="my-4">
+
+                                    <div class="pt-5">
+                                        <h6 class="mb-0"><a href="/product" class="text-body" style="background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent; "><i
+                                                class="fas fa-long-arrow-alt-left me-2" style="background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent; "></i>Back to shop</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 bg-body-tertiary">
+                                <div class="p-5">
+                                    <h3 class="fw-bold mb-5 mt-2 pt-1" style="background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent; ">Facture</h3>
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h5 class="text-uppercase">items <span id="item-count">0</span></h5>
+                                        <h5><span id="subtotal">€ 00.00</span></h5>
+                                    </div>
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <h5 class="text-uppercase">Total price</h5>
+                                        <h5><span id="total">€ 00.00</span></h5>
+                                    </div>
+
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
+                                            data-mdb-ripple-color="dark" id="btn-commander"style="background: linear-gradient(to right, #FF4B2B, #FF416C); ">Commander</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/panier.js"></script>
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

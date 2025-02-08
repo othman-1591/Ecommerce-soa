@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+          <span>
+            Kids Market
+          </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product">
+                            Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order">
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listProduct">
+                            Manage Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formProduct">
+                            add Products
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="user_option">
+
+                    <a href="#" id="login-link" onclick="redirectToLogin()">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span style="
+                        background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">Login</span>
+                    </a>
+
+                    <script>
+                        function redirectToLogin() {
+                            console.log("Redirection en cours...");
+                            window.location.href = "http://localhost:8080/login"; // Redirection vers le contrôleur Spring Boot
+                        }
+
+                    </script>
+
+                    <a href="/panier">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a>
+
+
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+</div>
+
+
+
+<div class="cont" id="cont">
+    <div class="container" id="container">
+    <!-- Sign Up Form -->
+    <div class="form-container sign-up-container">
+        <form id="signupForm">
+            <h2>Create Account</h2>
+
+            <input type="text" id="lastName" placeholder="Nom" required />
+            <input type="text" id="firstName" placeholder="Prénom" required />
+            <input type="text" id="address" placeholder="Adresse" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="tel" id="numTel" placeholder="Numéro de téléphone" required />
+            <input type="text" id="ville" placeholder="Ville" required />
+            <input type="password" id="password" placeholder="Mot de passe" required />
+            <button type="submit">S'inscrire</button>
+        </form>
+
+    </div>
+
+    <!-- Sign In Form -->
+    <div class="form-container sign-in-container">
+        <form id="signinForm">
+            <h2>Sign in</h2>
+            <br>
+            <input type="email" id="signinEmail" placeholder="Email" />
+            <input type="password" id="signinPassword" placeholder="Password" />
+            <br>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <!-- Overlay for Sign Up and Sign In toggle -->
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Hello, Friend!</h1>
+                <p>Kindly provide your personal information to proceed.</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Welcome Back!</h1>
+                <p>Enter your personal information to make a purchase in our shop.</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/listProduct.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+</head>
+<body>
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container " style="flex-flow: column;margin-bottom: 150px;">
+            <a class="navbar-brand" href="index.html">
+          <span>
+            Kids Market
+          </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product">
+                            Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order">
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listProduct">
+                            Manage Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formProduct">
+                            add Products
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="user_option">
+
+                    <a href="#" id="login-link" onclick="redirectToLogin()">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span style="
+                        background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">Login</span>
+                    </a>
+
+                    <script>
+                        function redirectToLogin() {
+                            console.log("Redirection en cours...");
+                            window.location.href = "http://localhost:8080/login"; // Redirection vers le contrôleur Spring Boot
+                        }
+
+                    </script>
+
+                    <a href="/panier">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a>
+
+
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+</div>
+<div id="listProduitContainer" style="width: 80%; margin: auto;">
+
+
+    <table id="myTable">
+        <tr style="background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent; " class="header">
+            <th style="width:20%;">Nom de produit</th>
+            <th style="width:20%;">Prix</th>
+            <th style="width:20%;">Stock</th>
+            <th style="width:20%;">Description</th>
+            <th style="width:20%;">Actions</th>
+        </tr>
+        <!-- Les produits seront ajoutés ici par JavaScript -->
+    </table>
+</div>
+
+
+<div id="formUpdateProduitContainer"></div>
+
+<script src="js/product.js"></script>
+</body>
+</html>

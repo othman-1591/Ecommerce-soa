@@ -1,0 +1,118 @@
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/formProduct.css" rel="stylesheet" />
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+          <span>
+            Kids Market
+          </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product">
+                            Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order">
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listProduct">
+                            Manage Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formProduct">
+                            add Products
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="user_option">
+
+                    <a href="#" id="login-link" onclick="redirectToLogin()">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span style="
+                        background: linear-gradient(to right, #FF4B2B, #FF416C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">Login</span>
+                    </a>
+
+                    <script>
+                        function redirectToLogin() {
+                            console.log("Redirection en cours...");
+                            window.location.href = "http://localhost:8080/login"; // Redirection vers le contrôleur Spring Boot
+                        }
+
+                    </script>
+
+                    <a href="/panier">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </a>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+
+
+<div class="formbold-main-wrapper">
+    <!-- Formulaire d'ajout produit -->
+    <div class="w-full">
+        <div class="formbold-form-wrapper">
+            <div class="formbold-form-header">
+                <h3>Formulaire d'ajout produit</h3>
+            </div>
+            <form action="" id="productForm" method="POST" class="formbold-chatbox-form">
+                <div class="formbold-mb-5">
+                    <label for="nom" class="formbold-form-label"> Nom du produit </label>
+                    <input type="text" name="nom" id="nom" placeholder="Nom du produit" class="formbold-form-input" />
+
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="prix" class="formbold-form-label"> Prix </label>
+                    <input type="number" name="prix" id="prix" placeholder="Prix du produit" class="formbold-form-input" />
+
+                </div>
+
+                <div class="formbold-mb-5">
+                    <label for="stock" class="formbold-form-label"> stock </label>
+                    <input type="number" name="stock" id="stock" placeholder="stock du produit" class="formbold-form-input" />
+
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="description" class="formbold-form-label"> Description du produit </label>
+                    <textarea name="description" id="description" placeholder="Description du produit" class="formbold-form-input" rows="3"></textarea>
+
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="fichierInput" class="formbold-form-label"> Image du produit </label>
+                    <input type="file" id="fichierInput" name="image" />
+
+                </div>
+                <div>
+                    <button type="submit" class="formbold-btn-cour w-full">Valider</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/product.js">
+</script>
